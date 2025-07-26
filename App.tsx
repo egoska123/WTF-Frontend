@@ -1,12 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import Navigation from './src/navigation/Navigation';
+import { useFonts } from 'expo-font';
+
 
 export default function App() {
+
+  const [fontsLoaded] = useFonts({
+    'Inter': require('./assets/fonts/Inter_18pt-Regular.ttf'),
+    'Raleway': require('./assets/fonts/Raleway-Regular.ttf')
+  });
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+      <Navigation />
   );
 }
 
